@@ -1,3 +1,4 @@
+const isDir = require('./isDir')
 const {
   execCommand,
   filterFinalBranch,
@@ -6,14 +7,16 @@ const {
 
 const {
   gitOriginBrach,
-} = require('../gitOpration')
+} = require('../command/gitOpration')
 
 module.exports = (cwd) => {
   const extraOpt = {
     cwd,
   }
+
   return new Promise((resolve, reject) => {
     let child
+
     try {
       child = execCommand(extraOpt, gitOriginBrach);
     } catch(e) {
@@ -21,7 +24,7 @@ module.exports = (cwd) => {
     }
     child.stdout.on('data', function(data) {
       const arr = filterFinalBranch(gitStrTransToArr(data));
-      resolve(arr);  
+      resolve(arr);
     })
   })
 }

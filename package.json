@@ -1,16 +1,14 @@
 {
-  "name": "gitWorkFlow",
-  "version": "0.1.0",
+  "name": "git-work-flow",
+  "version": "0.1.4",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2",
     "shelljs": "^0.7.8"
   }
 }
