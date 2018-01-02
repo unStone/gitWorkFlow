@@ -4,6 +4,10 @@ const gitAllBrach = `git branch -a`;
 const gitOriginBrach = `git branch -r`;
 // 拿到所有本地分支
 const gitLocalBrach = `git branch`;
+// pull 线上代码
+const gitPull = `git pull`;
+// fetch 分支
+const gitFetchOrigin = `git fetch origin`;
 // 删除本地分支
 const gitDeleteBrach = (branchName) => `git branch -D ${branchName}`;
 // 选择分支
@@ -15,6 +19,8 @@ module.exports = {
   gitAllBrach,
   gitOriginBrach,
   gitLocalBrach,
+  gitPull,
+  gitFetchOrigin,
   gitDeleteBrach,
   gitCheckoutBranch,
   isOutstrip,

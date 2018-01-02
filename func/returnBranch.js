@@ -1,13 +1,9 @@
-const isDir = require('./isDir')
 const {
   execCommand,
   filterFinalBranch,
   gitStrTransToArr,
 } = require('../src/exec');
-
-const {
-  gitOriginBrach,
-} = require('../command/gitOpration')
+const { gitOriginBrach } = require('../command/gitOpration')
 
 module.exports = (cwd) => {
   const extraOpt = {

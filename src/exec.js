@@ -9,7 +9,7 @@ const baseOptions = {
  * @param {Obeject} extraOpt 
  * @param {String} command 
  */ 
-const execCommand = (extraOpt, command) => {
+const execCommand = (extraOpt, command, callback) => {
   if(!extraOpt.cwd) {
     throw new Error(
       "you must designated as the project's path"
@@ -17,7 +17,7 @@ const execCommand = (extraOpt, command) => {
   }
 
   const opt = Object.assign({}, baseOptions, extraOpt);
-  return shell.exec(command, opt);
+  return shell.exec(command, opt, callback);
 }
 
 /**
@@ -47,7 +47,14 @@ const gitStrTransToArr = (gitBranchStr) => {
   return gitBranchStr.split('\n');
 }
 
+const cd = shell.cd;
+const ls = shell.ls;
+const cp = shell.cp;
+
 module.exports = {
+  cp,
+  cd,
+  ls,
   execCommand,
   filterFinalBranch,
   gitStrTransToArr,
