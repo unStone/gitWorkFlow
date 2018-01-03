@@ -2,8 +2,6 @@ const { cd, cp, ls, rm, mv, mkdir } = require('../src/exec');
 
 const $cd = (path) => {
   return new Promise((resolve, reject) => {
-    let child
-
     try {
       cd(path);
       resolve();
@@ -15,8 +13,6 @@ const $cd = (path) => {
 
 const $cp = (path, to) => {
   return new Promise((resolve, reject) => {
-    let child
-
     try {
       cp('-r', path, to);
       resolve();
@@ -26,10 +22,10 @@ const $cp = (path, to) => {
   })
 }
 
-const $ls = (path) => {
+const $ls = (param) => {
   return new Promise((resolve, reject) => {
     try {
-      const arr = ls(path);
+      const arr = ls(param);
       resolve(arr);
     } catch(e) {
       return reject(e)

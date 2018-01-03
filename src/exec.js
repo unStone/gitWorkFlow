@@ -10,7 +10,6 @@ const baseOptions = {
  * @param {String} command 
  */ 
 const execCommand = (extraOpt, command, callback) => {
-  console.log(extraOpt, command, callback)
   if(!extraOpt.cwd) {
     throw new Error(
       "you must designated as the project's path"

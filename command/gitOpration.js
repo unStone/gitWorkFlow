@@ -16,9 +16,9 @@ const gitCheckoutBranch = (branchName) => `git checkout ${branchName}`;
 const isOutstrip = (a, b) => `git log --oneline ${a} ^${b}`;
 
 // pm2 启动服务器
-const pm2Start = (indexJs, name) => `pm2 start ${indexJs} -i 0 -n ${name}`
+const pm2Start = (indexJs, num, name) => `pm2 start ${indexJs} -i ${num} -n ${name}`
 // pm2 停止服务器
-const pm2Stop = (indexJs) => `pm2 stop ${indexJs} -s`
+const pm2Stop = (name) => `pm2 stop ${name}`
 
 module.exports = {
   gitAllBrach,
