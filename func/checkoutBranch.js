@@ -16,7 +16,6 @@ module.exports = (cwd, branch) => {
       return reject(e)
     }
     child.stdout.on('data', function(data) {
-      console.log('checkoutcheckoutcheckout', data)
       resolve(data);
     })
   })

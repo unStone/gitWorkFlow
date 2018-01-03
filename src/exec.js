@@ -10,6 +10,7 @@ const baseOptions = {
  * @param {String} command 
  */ 
 const execCommand = (extraOpt, command, callback) => {
+  console.log(extraOpt, command, callback)
   if(!extraOpt.cwd) {
     throw new Error(
       "you must designated as the project's path"
@@ -50,11 +51,19 @@ const gitStrTransToArr = (gitBranchStr) => {
 const cd = shell.cd;
 const ls = shell.ls;
 const cp = shell.cp;
+const rm = shell.rm;
+const mv = shell.mv;
+const mkdir = shell.mkdir;
+const which = shell.which;
 
 module.exports = {
   cp,
   cd,
   ls,
+  rm,
+  mv,
+  mkdir,
+  which,
   execCommand,
   filterFinalBranch,
   gitStrTransToArr,

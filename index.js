@@ -3,10 +3,9 @@ const gitIsOutstrip = require('./func/returnIsOutstrip');
 const gitCheckoutBranch = require('./func/checkoutBranch');
 const gitPullBranch = require('./func/pullBranch');
 const fetchOriginBranch = require('./func/fetchOriginBranch');
-const cd = require('./func/cd');
-const ls = require('./func/ls');
-const cp = require('./func/cp');
+const { cp, cd, ls, rm, mv, mkdir } = require('./func/easyCommand');
 const { isExist, isDir } = require('./func/fsJudge');
+const { projectStart, projectStop } = require('./func/pm2')
 
 module.exports = {
   gitCheckoutBranch,
@@ -19,4 +18,9 @@ module.exports = {
   cd,
   ls,
   cp,
+  rm,
+  mv,
+  mkdir,
+  projectStart,
+  projectStop,
 }

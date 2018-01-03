@@ -8,13 +8,13 @@ module.exports = (cwd) => {
 
   return new Promise((resolve, reject) => {
     let child
-
     try {
       child = execCommand(extraOpt, gitPull);
     } catch(e) {
       return reject(e)
     }
     child.stdout.on('data', function(data) {
+      console.log('data', data)
       resolve(data);
     })
   })

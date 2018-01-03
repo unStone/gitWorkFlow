@@ -13,7 +13,12 @@ const gitDeleteBrach = (branchName) => `git branch -D ${branchName}`;
 // 选择分支
 const gitCheckoutBranch = (branchName) => `git checkout ${branchName}`;
 // a分支 超前 b 分支的 commit
-const isOutstrip = (a, b) => `git log --oneline ${a} ^${b}`
+const isOutstrip = (a, b) => `git log --oneline ${a} ^${b}`;
+
+// pm2 启动服务器
+const pm2Start = (indexJs, name) => `pm2 start ${indexJs} -i 0 -n ${name}`
+// pm2 停止服务器
+const pm2Stop = (indexJs) => `pm2 stop ${indexJs} -s`
 
 module.exports = {
   gitAllBrach,
@@ -24,4 +29,6 @@ module.exports = {
   gitDeleteBrach,
   gitCheckoutBranch,
   isOutstrip,
+  pm2Start,
+  pm2Stop,
 }
