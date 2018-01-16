@@ -3,26 +3,30 @@ const gitIsOutstrip = require("./func/returnIsOutstrip");
 const gitCheckoutBranch = require("./func/checkoutBranch");
 const gitPullBranch = require("./func/pullBranch");
 const fetchOriginBranch = require("./func/fetchOriginBranch");
-const { cp, cd, ls, rm, mv, mkdir } = require("./func/easyCommand");
+const { cp, cd, ls, rm, mv, mkdir, tail } = require("./func/easyCommand");
 const { isExist, isDir } = require("./func/fsJudge");
 const { projectStart, projectStop } = require("./func/pm2");
-const { touch } = "./src/exec.js";
+const { touch, sed, cat, echo } = require("./src/exec.js");
 
 module.exports = {
   gitCheckoutBranch,
+  fetchOriginBranch,
+  gitPullBranch,
   gitIsOutstrip,
   gitOpration,
-  gitPullBranch,
-  fetchOriginBranch,
   isExist,
   isDir,
+  echo,
+  cat,
   cd,
   ls,
   cp,
   rm,
   mv,
+  sed,
+  tail,
   mkdir,
   touch,
+  projectStop,
   projectStart,
-  projectStop
 };

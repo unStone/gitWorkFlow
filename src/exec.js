@@ -55,6 +55,10 @@ const mv = shell.mv;
 const mkdir = shell.mkdir;
 const which = shell.which;
 const touch = shell.touch;
+const sed = shell.sed;
+const tail = shell.tail;
+const cat = shell.cat;
+const echo = shell.echo;
 
 module.exports = {
   cp,
@@ -62,6 +66,10 @@ module.exports = {
   ls,
   rm,
   mv,
+  cat,
+  sed,
+  echo,
+  tail,
   mkdir,
   which,
   touch,

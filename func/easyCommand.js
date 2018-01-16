@@ -1,4 +1,4 @@
-const { cd, cp, ls, rm, mv, mkdir } = require('../src/exec');
+const { cd, cp, ls, rm, mv, mkdir, tail } = require('../src/exec');
 
 const $cd = (path) => {
   return new Promise((resolve, reject) => {
@@ -65,11 +65,24 @@ const $mkdir = (path) => {
   })
 }
 
+const $tail = (...command) => {
+  return new Promise((resolve, reject) => {
+    try {
+      const str = tail(...command);
+      resolve(str.stdout);
+    } catch(e) {
+      return reject(e)
+    }
+  })
+}
+
+
 module.exports = {
   cd: $cd, 
   cp: $cp,
   ls: $ls,
   rm: $rm,
   mv: $mv,
+  tail: $tail,
   mkdir: $mkdir,
 }
