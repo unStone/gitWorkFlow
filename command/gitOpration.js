@@ -21,7 +21,7 @@ const pm2Start = (indexJs, num, name) =>
 // pm2 停止服务器
 const pm2Stop = name => `pm2 stop ${name}`;
 
-const npmInstallG = modules => `npm install -g ${modules}`
+const npmInstallG = modules => `npm install -g ${modules}`;
 
 module.exports = {
   gitAllBrach,
@@ -34,5 +34,5 @@ module.exports = {
   isOutstrip,
   pm2Start,
   pm2Stop,
-  npmInstallG,
+  npmInstallG
 };

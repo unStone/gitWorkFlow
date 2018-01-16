@@ -7,7 +7,7 @@ const { cp, cd, ls, rm, mv, mkdir, tail } = require("./func/easyCommand");
 const { isExist, isDir } = require("./func/fsJudge");
 const { projectStart, projectStop } = require("./func/pm2");
 const { touch, sed, cat, echo } = require("./src/exec.js");
-const { installModules } = require('./func/installMoudules');
+const { installModules } = require("./func/installMoudules");
 
 module.exports = {
   gitCheckoutBranch,
@@ -30,5 +30,5 @@ module.exports = {
   touch,
   projectStop,
   projectStart,
-  installModules,
+  installModules
 };

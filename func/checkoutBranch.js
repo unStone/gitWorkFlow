@@ -1,22 +1,22 @@
-const { execCommand } = require('../src/exec');
-const { gitCheckoutBranch } = require('../command/gitOpration');
+const { execCommand } = require("../src/exec");
+const { gitCheckoutBranch } = require("../command/gitOpration");
 
 module.exports = (cwd, branch) => {
   const extraOpt = {
-    cwd,
-  }
+    cwd
+  };
 
-  const command = gitCheckoutBranch(branch)
+  const command = gitCheckoutBranch(branch);
   return new Promise((resolve, reject) => {
-    let child
+    let child;
 
     try {
       child = execCommand(extraOpt, command);
-    } catch(e) {
-      return reject(e)
+    } catch (e) {
+      return reject(e);
     }
-    child.stdout.on('data', function(data) {
+    child.stdout.on("data", function(data) {
       resolve(data);
-    })
-  })
-}
+    });
+  });
+};

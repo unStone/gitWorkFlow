@@ -1,19 +1,19 @@
-const { execCommand } = require('../src/exec');
-const { gitPull } = require('../command/gitOpration');
+const { execCommand } = require("../src/exec");
+const { gitPull } = require("../command/gitOpration");
 
-module.exports = (cwd) => {
+module.exports = cwd => {
   const extraOpt = {
-    cwd,
-  }
+    cwd
+  };
 
   return new Promise((resolve, reject) => {
-    let child
+    let child;
     try {
       child = execCommand(extraOpt, gitPull, (code, stdout, stderr) => {
-        if(code === 0) return resolve();
+        if (code === 0) return resolve();
       });
-    } catch(e) {
-      return reject(e)
+    } catch (e) {
+      return reject(e);
     }
-  })
-}
+  });
+};

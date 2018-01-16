@@ -1,26 +1,26 @@
 const {
   execCommand,
   filterFinalBranch,
-  gitStrTransToArr,
-} = require('../src/exec');
-const { gitOriginBrach } = require('../command/gitOpration')
+  gitStrTransToArr
+} = require("../src/exec");
+const { gitOriginBrach } = require("../command/gitOpration");
 
-module.exports = (cwd) => {
+module.exports = cwd => {
   const extraOpt = {
-    cwd,
-  }
+    cwd
+  };
 
   return new Promise((resolve, reject) => {
-    let child
+    let child;
 
     try {
       child = execCommand(extraOpt, gitOriginBrach);
-    } catch(e) {
-      return reject(e)
+    } catch (e) {
+      return reject(e);
     }
-    child.stdout.on('data', function(data) {
+    child.stdout.on("data", function(data) {
       const arr = filterFinalBranch(gitStrTransToArr(data));
       resolve(arr);
-    })
-  })
-}
+    });
+  });
+};

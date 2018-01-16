@@ -1,24 +1,19 @@
-const { execCommand } = require('../src/exec');
-const { gitFetchOrigin } = require('../command/gitOpration');
+const { execCommand } = require("../src/exec");
+const { gitFetchOrigin } = require("../command/gitOpration");
 
-module.exports = (cwd) => {
+module.exports = cwd => {
   const extraOpt = {
-    cwd,
-  }
+    cwd
+  };
 
   return new Promise((resolve, reject) => {
-    let child
+    let child;
 
     try {
       child = execCommand(extraOpt, gitFetchOrigin);
-    } catch(e) {
-      console.log('eeeee', e)
-      return reject(e)
+    } catch (e) {
+      return reject(e);
     }
-    // child.stdout.on('data', function(data) {
-    //   console.log('gitFetchgitFetch333', data)
-    //   resolve(data);
-    // })
-    resolve('');
-  })
-}
+    resolve("");
+  });
+};
