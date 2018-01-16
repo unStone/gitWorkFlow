@@ -54,6 +54,7 @@ const rm = shell.rm;
 const mv = shell.mv;
 const mkdir = shell.mkdir;
 const which = shell.which;
+const touch = shell.touch;
 
 module.exports = {
   cp,
@@ -63,6 +64,7 @@ module.exports = {
   mv,
   mkdir,
   which,
+  touch,
   execCommand,
   filterFinalBranch,
   gitStrTransToArr,

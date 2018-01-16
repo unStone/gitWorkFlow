@@ -9,16 +9,17 @@ const gitPull = `git pull`;
 // fetch 分支
 const gitFetchOrigin = `git fetch origin`;
 // 删除本地分支
-const gitDeleteBrach = (branchName) => `git branch -D ${branchName}`;
+const gitDeleteBrach = branchName => `git branch -D ${branchName}`;
 // 选择分支
-const gitCheckoutBranch = (branchName) => `git checkout ${branchName}`;
+const gitCheckoutBranch = branchName => `git checkout ${branchName}`;
 // a分支 超前 b 分支的 commit
 const isOutstrip = (a, b) => `git log --oneline ${a} ^${b}`;
 
 // pm2 启动服务器
-const pm2Start = (indexJs, num, name) => `pm2 start ${indexJs} -i ${num} -n ${name}`
+const pm2Start = (indexJs, num, name) =>
+  `pm2 start ${indexJs} -i ${num} -n ${name}`;
 // pm2 停止服务器
-const pm2Stop = (name) => `pm2 stop ${name}`
+const pm2Stop = name => `pm2 stop ${name}`;
 
 module.exports = {
   gitAllBrach,
@@ -30,5 +31,5 @@ module.exports = {
   gitCheckoutBranch,
   isOutstrip,
   pm2Start,
-  pm2Stop,
-}
+  pm2Stop
+};
