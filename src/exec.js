@@ -64,6 +64,7 @@ const sed = shell.sed;
 const tail = shell.tail;
 const cat = shell.cat;
 const echo = shell.echo;
+const exit = shell.exit;
 
 module.exports = {
   cp,
@@ -75,6 +76,7 @@ module.exports = {
   sed,
   echo,
   tail,
+  exit,
   mkdir,
   which,
   touch,

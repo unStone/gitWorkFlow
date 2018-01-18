@@ -10,10 +10,13 @@ module.exports = cwd => {
     let child;
 
     try {
-      child = execCommand(extraOpt, gitFetchOrigin);
+      child = execCommand(extraOpt, gitFetchOrigin, (code) => {
+        if(code === 0) {
+          resolve();
+        }
+      });
     } catch (e) {
       return reject(e);
     }
-    resolve("");
   });
 };
