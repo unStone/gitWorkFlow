@@ -18,7 +18,6 @@ const installmodulesWithCache = (extraOpt, resolve, reject) => {
   const command = npmInstallG("yarn add");
   try {
     execCommand(extraOpt, command, code => {
-      console.log("installMoudules-------------", code);
       if (code === 0) return resolve();
     });
   } catch (e) {

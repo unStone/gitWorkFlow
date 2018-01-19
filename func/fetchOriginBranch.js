@@ -7,11 +7,9 @@ module.exports = cwd => {
   };
 
   return new Promise((resolve, reject) => {
-    let child;
-
     try {
       child = execCommand(extraOpt, gitFetchOrigin, (code) => {
-        if(code === 0) {
+        if (code === 0) {
           resolve();
         }
       });

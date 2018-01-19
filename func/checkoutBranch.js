@@ -8,15 +8,14 @@ module.exports = (cwd, branch) => {
 
   const command = gitCheckoutBranch(branch);
   return new Promise((resolve, reject) => {
-    let child;
-
     try {
-      child = execCommand(extraOpt, command);
+      execCommand(extraOpt, command, (code) => {
+        if (code === 0) {
+          resolve();
+        }
+      });
     } catch (e) {
       return reject(e);
     }
-    child.stdout.on("data", function(data) {
-      resolve(data);
-    });
   });
 };
